@@ -1,81 +1,66 @@
-# Project Name
-
-A concise description of your project.
+# Fractal
+A WebAssembly-powered geometric pattern generator built with Go.
 
 ## Overview
 
-This project provides a codebase that integrates WebAssembly with a Go runtime environment using a custom implementation of `wasm_exec.js`. It serves as a demonstration of file system operations within a WebAssembly context and can be used as a starting point for further development.
+Fractal is a creative coding project that generates mesmerizing geometric patterns using WebAssembly and Go. It currently specializes in creating random line patterns within triangular boundaries, with plans to expand into more complex fractal-based designs.
 
 ## Features
 
-- WebAssembly integration with Go.
-- Custom file system emulation for standard I/O operations.
-- Lightweight and extendable code structure.
+- Real-time pattern generation using WebAssembly
+- Efficient Go-based rendering engine
+- Triangle-based boundary system
+- Random line pattern generation
+- Custom WebAssembly file system integration
+- Lightweight architecture for optimal performance
 
-## Installation
+## Quick Start
 
 1. Clone the repository:
+    ```bash
+    git clone https://github.com/bravian1/parterns.git
+    cd parterns
     ```
-    git clone https://github.com/yourusername/yourproject.git
-    ```
-2. Navigate to the project directory:
-    ```
-    cd yourproject
-    ```
-3. Install any dependencies (if applicable) using your package manager.
 
-## Usage
+2. Build the WebAssembly module:
+    ```bash
+    GOOS=js GOARCH=wasm go build -o main.wasm
+    cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+    ```
 
-Include the `wasm_exec.js` script in your project. This script sets up a basic file system interface to handle output via WebAssembly modules.
+3. Start the server:
+    ```bash
+    go run server.go
+    ```
 
-For example, load the script in your HTML file:
+## Implementation
+
+Include the WebAssembly executor in your HTML:
 ```html
 <script src="wasm_exec.js"></script>
 ```
 
-Compile your Go code to WebAssembly and then run:
-```
-GOOS=js GOARCH=wasm go build -o main.wasm
-```
+## Future Development
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature-name`.
-3. Commit your changes.
-4. Push to your branch and create a pull request.
-
-## License
-
-This project is licensed under the BSD License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- [The Go Authors](https://golang.org/) for their work on Go and the original wasm_exec.js.
-- Community contributions that make this project possible.
-## Setup
-
-Execute the following commands in your terminal to build the WebAssembly module and run the server:
-
-```bash
-GOOS=js GOARCH=wasm go build -o main.wasm
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
-go run server.go
-```
-## About Fractal
-
-Fractal is a creative coding project that explores pattern generation through geometric shapes. Currently, the project focuses on generating random line patterns within triangular boundaries, laying the foundation for more complex fractal-based designs.
-
-### Current Features
-- Random line generation
-- Triangle-based boundary system
-- Real-time pattern rendering
-
-### Future Development
-We plan to expand the pattern generation to include:
-- True fractal-based patterns
+- Fractal-based pattern generation
 - Multiple geometric shape support
 - Color schemes and gradients
 - Interactive pattern controls
+- Enhanced rendering options
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## License
+
+Licensed under the BSD License. See [LICENSE](LICENSE) for details.
+
+## Acknowledgements
+
+- Go team for WebAssembly support
+- Contributors and community members
